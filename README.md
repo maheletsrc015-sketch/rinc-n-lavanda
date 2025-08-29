@@ -1,183 +1,80 @@
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lugar Seguro de Mani — Rise Up</title>
+  <meta charset="UTF-8">
+  <title>Tu Rincón Lavanda</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f7fb;
-      color: #3d2a4d;
+      font-family: 'Georgia', cursive;
+      background: linear-gradient(to bottom, #e6e6fa, #d8bfd8);
+      color: #4b0082;
       text-align: center;
-    }
-    header {
-      background: linear-gradient(135deg, #c4a1e0, #9c7bb8);
-      color: white;
-      padding: 2rem;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
+      padding: 40px;
     }
     h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.5em;
     }
-    .audio, .quotes, .dedicatoria, .galeria, .capsula, .contacto {
-      margin: 2rem auto;
+    .dedicatoria {
+      font-size: 1.3em;
+      margin: 20px auto;
       max-width: 600px;
-      background: white;
-      border-radius: 20px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .quotes p {
       font-style: italic;
-      font-size: 1.2rem;
+      background: rgba(255,255,255,0.6);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     }
-    .galeria img {
-      max-width: 100px;
-      margin: 0.5rem;
-      border-radius: 10px;
+    .fotos {
+      margin: 30px 0;
     }
-    button {
-      background: #9c7bb8;
+    .fotos img {
+      max-width: 250px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    .spotify {
+      margin: 30px auto;
+      max-width: 400px;
+    }
+    .boton {
+      background-color: #9370db;
       color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      margin: 0.5rem;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1rem;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1.1em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    button:hover {
-      background: #7d5e97;
-    }
-    textarea {
-      width: 100%;
-      height: 100px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-    .modo-suave {
-      background: #ede7f6;
-      color: #3d2a4d;
+    .boton:hover {
+      background-color: #7a5ccc;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Tú rincón lavanda</h1>
-    <p>Con la fuerza de <strong>Rise Up</strong></p>
-  </header>
+  <h1>✨ Tu Rincón Lavanda ✨</h1>
+  
+  <div class="dedicatoria">
+    <p>Mani, esta canción es para recordarte que siempre puedes levantarte, 
+    incluso en los días más pesados.  
+    Eres mi fuerza, mi inspiración y mi lugar seguro.  
+    Aunque estemos lejos, mi corazón siempre camina contigo. 💜</p>
+  </div>
 
-  <section class="audio">
-    <h2>🎵 Nuestra canción</h2>
-    <iframe src="https://open.spotify.com/embed/track/0tV8pOpiNsKqUys0ilUcXz" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border-radius:12px" allowfullscreen=""></iframe>
-  </section>
+  <div class="fotos">
+    <img src="foto1.jpg" alt="Nosotras juntas">
+    <img src="foto2.jpg" alt="Recuerdo especial">
+    <!-- Cambia "foto1.jpg" y "foto2.jpg" por las rutas reales de tus fotos -->
+  </div>
 
-  <section class="quotes">
-    <h2>✨ Frases</h2>
-    <p id="frase">I'll rise up</p>
-  </section>
+  <div class="spotify">
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/0tV8pOpiNsKqUys0ilUcXz?utm_source=generator" 
+      width="100%" height="352" frameborder="0" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
 
-  <section class="dedicatoria">
-    <h2>💌 Dedicatoria</h2>
-    <textarea id="mensaje" placeholder="Escribe tu dedicatoria para Mani..."></textarea>
-    <br>
-    <button onclick="guardarMensaje()">Guardar</button>
-  </section>
-
-  <section class="galeria">
-    <h2>📸 Nosotras</h2>
-    <input type="file" id="fileInput" accept="image/*" multiple>
-    <div id="imagenes"></div>
-  </section>
-
-  <section class="capsula">
-    <h2>🌷 Cápsula de ánimo</h2>
-    <button onclick="mostrarAnimo()">Abrir mensaje sorpresa</button>
-    <p id="animo"></p>
-  </section>
-
-  <section class="contacto">
-    <h2>📱 Contacto directo</h2>
-    <p>Cuando quieras contarme cómo te sientes, solo pulsa aquí:</p>
-    <a href="https://wa.me/525568189201" target="_blank">
-      <button>Enviar WhatsApp a Mahe</button>
-    </a>
-  </section>
-
-  <section>
-    <button onclick="toggleSuave()">🌙 Activar/Desactivar modo suave</button>
-  </section>
-
-  <script>
-    const frases = [
-      "I'll rise up",
-      "In spite of the ache",
-      "I'll rise a thousand times again",
-      "All we need is hope",
-      "And we'll rise up"
-    ];
-    let i = 0;
-    setInterval(() => {
-      document.getElementById("frase").innerText = frases[i];
-      i = (i + 1) % frases.length;
-    }, 4000);
-
-    function guardarMensaje() {
-      const msg = document.getElementById("mensaje").value;
-      localStorage.setItem("dedicatoria", msg);
-      alert("Dedicatoria guardada 💜");
-    }
-    window.onload = () => {
-      const saved = localStorage.getItem("dedicatoria");
-      if (saved) document.getElementById("mensaje").value = saved;
-
-      // Cargar imágenes guardadas
-      const savedImages = JSON.parse(localStorage.getItem("imagenes")) || [];
-      const cont = document.getElementById("imagenes");
-      savedImages.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        cont.appendChild(img);
-      });
-    }
-
-    document.getElementById("fileInput").addEventListener("change", (e) => {
-      const cont = document.getElementById("imagenes");
-      cont.innerHTML = "";
-      const imageArray = [];
-      Array.from(e.target.files).forEach(file => {
-        const reader = new FileReader();
-        reader.onload = () => {
-          const img = document.createElement("img");
-          img.src = reader.result;
-          cont.appendChild(img);
-          imageArray.push(reader.result);
-          localStorage.setItem("imagenes", JSON.stringify(imageArray));
-        };
-        reader.readAsDataURL(file);
-      });
-    });
-
-    const mensajes = [
-      "Eres más fuerte de lo que imaginas 💪",
-      "Siempre te levantarás, aunque cueste 💜",
-      "Estoy contigo, Mani 🌸",
-      "Tu luz nunca se apaga ✨"
-    ];
-    function mostrarAnimo() {
-      const m = mensajes[Math.floor(Math.random()*mensajes.length)];
-      document.getElementById("animo").innerText = m;
-    }
-
-    function toggleSuave() {
-      document.body.classList.toggle("modo-suave");
-    }
-  </script>
+  <br>
+  <a href="https://wa.me/525568189201" class="boton">🌸 Enviar WhatsApp a Mahe</a>
 </body>
 </html>
