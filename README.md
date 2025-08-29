@@ -61,7 +61,7 @@
   </div>
 
   <div class="fotos">
-    <img src="(https://github.com/maheletsrc015-sketch/rinc-n-lavanda/blob/57a41b18abc9ea18a7efc91ffae28329b27fe3d5/BETSA%208.jpg)" alt="Nosotras juntas">
+    <img src="(BETSA 8.jpg)" alt="Nosotras juntas">
   </div>
 
   <div class="spotify">
